@@ -6,7 +6,8 @@
     },
     "compileOnSave": false,
     "include": [
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "index.js"
     ],
     "exclude": [
         "node_modules"
