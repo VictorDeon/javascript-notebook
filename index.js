@@ -15,7 +15,7 @@ watcher.on('ready', function() {
   watcher.on('all', function() {
     console.log("Limpando o cache dos modulos da pasta src.");
     Object.keys(require.cache).forEach(function(id) {
-      if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
+      if (/[\/\\]src[\/\\]/.test(id)) delete require.cache[id];
     });
   });
 });

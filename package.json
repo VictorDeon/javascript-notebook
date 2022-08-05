@@ -2,7 +2,7 @@
   "name": "mewtwo",
   "version": "1.0.0",
   "description": "Blog do tutorial de nodejs + graphql",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "start": "node index"
   },
@@ -10,10 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "4.0.37",
-    "@types/node": "8.0.34",
-    "chokidar": "3.5.3",
-    "typescript": "2.5.3"
+    "chokidar": "3.5.3"
   },
   "dependencies": {
     "express": "4.16.2"
