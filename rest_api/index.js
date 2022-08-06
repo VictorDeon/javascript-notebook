@@ -7,7 +7,8 @@ if (process.env.NODE_ENV !== 'production') {
   const chokidar = require('chokidar');
   const watcher = chokidar.watch('./src', {
     persistent: false,
-    ignoreInitial: true
+    ignoreInitial: true,
+    ignored: ['node_modules', 'build']
   });
 
   watcher.on('ready', function() {
