@@ -19,7 +19,11 @@ async function startApolloServer() {
 
   await server.start();
   server.applyMiddleware({ app, path: '/graphql' });
-  app.listen(3000, () => console.log('Rodando graphql http://localhost:3000/graphql'));
+  const port = 3000;
+  app.listen(port, () => { 
+    console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`)
+    // console.log(`🚀 Subscriptions ready at ws://localhost:${port}${server.subscriptionsPath}`)
+  });
 }
 
 startApolloServer();
