@@ -128,4 +128,6 @@ console.log("3"); // Call Stack executa
 
 É um javascrip runtime, ou seja, ele atua como o web API de forma async, porém fora do browser usando o C++. Funciona de forma muito simular ao
 runtime do browser, porém faz muita mais coisas do que o browser como acessar seus arquivos e etc. Ou seja, ele é a soma do browser runtime com a
-engine do javascript V8, porém sem acesso as funcionalidades do browser como o `window` ao inves dele tem o `global`
+engine do javascript V8, porém sem acesso as funcionalidades do browser como o `window` ao inves dele tem o `global`.
+
+![q](https://user-images.githubusercontent.com/14116020/183785596-113beeff-3420-4e02-8a69-8b910b84e0d4.png)
