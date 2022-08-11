@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    // Define a versão do javascript e inclui declarações de bibliotecas compativeis
-    "target": "ES2022",
+    // Define a versão do javascript de saída
+    "target": "ES5",
     // Especifica que tipo de codigo é gerado
-    "module": "commonjs",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": ["ES2015", "DOM"]
   }
 }

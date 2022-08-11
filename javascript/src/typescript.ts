@@ -34,85 +34,46 @@ let none2: null = null;
 let myFunction = (): void => console.log("não retorna nada!");
 let functionReturn = (): string => "ola mundo!";
 
-// never (funcoes que não podem retornar nada) #############
+// never (funcoes que nunca finaliza - loop) #############
 let error = (): never => {throw Error("Ops...");}
 
 // any (not use) ###########################################
 let whatever: any = "Ola mundo!";
 
-// interface ou type (parece um struct ou model) ###########
-interface RobotArmy1 {
+// interface (parece um struct ou model) ###################
+interface RobotArmy {
     count: number,
     type: string,
     magic: string
 }
-type RobotArmy2 = {
-    count: number,
-    type: string,
-    magic: string
-}
-let fightRobotArmy1 = (robots: RobotArmy1) => {
+let fightRobotArmy = (robots: RobotArmy) => {
     console.log("FIGHT!!!", robots.type);
 }
-let fightRobotArmy2 = (robots: RobotArmy2) => {
-    console.log("FIGHT!!!", robots.count);
-}
-let fightRobotArmy3 = (robots: { count: number, type: string, magic: string }) => {
-    console.log("FIGHT!!!", robots.magic);
-}
-fightRobotArmy1({count: 1, type: 'robot', magic: 'froo'});
-fightRobotArmy2({count: 2, type: 'robot', magic: 'less'});
-fightRobotArmy3({count: 3, type: 'robot', magic: 'aaaa'});
+fightRobotArmy({count: 1, type: 'robot', magic: 'froo'});
+
+// Type #####################################################
+type MyNumber = number | undefined
+const idade: MyNumber = 10;
 
 // Type Assertion (sobrescreve outro type) evite usar ########
 interface CatArmy {
     count: number,
     type: string,
-    magic: string
+    magic?: string // Optional
 }
-let dog = {} as CatArmy;
-console.log(dog.count);
-
-// Optional attribute #########################################
-interface DogArmy {
-    count: number,
-    type: string,
-    magic?: string // Opcional
-}
-let fightDogArmy = (robots: DogArmy) => {
+let cat = {
+    count: 22,
+    type: 'cat'
+} as CatArmy;
+let fightDogArmy = (robots: CatArmy = cat) => {
     console.log("FIGHT!!!", robots.type);
-}
-fightDogArmy({count: 1, type: 'dog'});
-fightDogArmy({count: 1, type: 'dog', magic: 'fruu'});
-
-// Interface with Generics ###################################
-interface APICall<Response> {
-    data: Response;
 }
 
 // Function ###################################################
-const multiply = (a: number, b: number): number => {
-    return a * b;
+type Multiply = (x: number, b: number) => number;
+const multiply: Multiply = (x: number, y: number): number => {
+    return x * y;
 }
-
-// Class ######################################################
-class Animal /* extends Primate implements DogArmy */ {
-    private sing: string = 'lalalala';
-    public name: string = "";
-
-    constructor(sound: string, name: string) {
-        this.sing = sound;
-        this.name = name
-    }
-
-    greet(): string {
-        return `Hello ${this.sing}`;
-    }
-}
-
-let lion = new Animal("Lion", "RAAAWWWR");
-lion.name
-lion.greet();
 
 // Union ######################################################
 let confused: string | number = "Ola mundo!";
