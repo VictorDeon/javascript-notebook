@@ -1,0 +1,11 @@
+{
+    "name": "notebook",
+    "version": "1.0.0",
+    "scripts": {
+        "ijsinstall": "./node_modules/.bin/ijsinstall",
+        "start": "jupyter-lab"
+    },
+    "devDependencies": {
+        "ijavascript": "^5.2.1"
+    }
+}

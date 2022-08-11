@@ -4,6 +4,13 @@ Tutorial de nodejs
 
 ![image](https://user-images.githubusercontent.com/14116020/180343772-1bdf2ed9-4d18-4b97-b700-e9dc0f6537f5.png)
 
+Instale o [jupyterlab](https://jupyter.org/install)
+
+```sh
+sudo pip3 install jupyterlab
+jupyter-lab
+```
+
 ## Memory Heap
 
 ```js
