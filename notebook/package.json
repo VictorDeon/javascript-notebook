@@ -2,10 +2,13 @@
     "name": "notebook",
     "version": "1.0.0",
     "scripts": {
-        "ijsinstall": "./node_modules/.bin/ijsinstall",
+        "jsinstall": "./node_modules/.bin/ijsinstall",
+        "tsinstall": "./node_modules/.bin/tslab install",
+        "kernels": "jupyter kernelspec list",
         "start": "jupyter-lab"
     },
     "devDependencies": {
-        "ijavascript": "^5.2.1"
+        "ijavascript": "^5.2.1",
+        "tslab": "^1.0.15"
     }
 }
