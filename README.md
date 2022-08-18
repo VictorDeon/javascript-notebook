@@ -1,12 +1,114 @@
 ## Javascript Notebook
 
-Tutorial de nodejs
+Tutorial de [javascript](https://developer.mozilla.org/pt-BR/)
 
 Instale o [jupyterlab](https://jupyter.org/install)
 
 ```sh
 sudo pip3 install jupyterlab
 jupyter-lab
+```
+
+## Sistema Léxico
+
+**Instrução**: É tudo que é passado para o interpretador do javascript linha a linha.
+
+```js
+let nome = "Victor"; // Instrução 01
+10 + 2 // Instrução 02
+// ...
+```
+
+**Comentario**: É uma forma de colocar texto no código que o interpretador não irá enxergar
+
+```js
+// Comentario de uma única linha
+/* 
+ Comentario
+ de multiplas
+ linhas
+*/
+```
+
+**CaseSensitive**: O JS diferencia letras maiusculas de letras minusculas.
+
+```js
+// Tudo variáveis diferentes
+let firstName = "Nome01";
+let firstname = "Nome02";
+let Firstname = "Nome03";
+let FirstName = "Nome04";
+```
+
+**Palavras Reservadas**: São palavras que são próprias do JS, não se pode criar nada com elas
+
+![pr](https://user-images.githubusercontent.com/14116020/185243807-f96dceaa-75d5-4194-9c0e-ad303c361298.png)
+
+![p2](https://user-images.githubusercontent.com/14116020/185244144-0dd29127-54da-4e01-8f8e-91a4ee94e8b9.png)
+
+**Ponto e Virgula**: É opcional, mas é uma boa prática, já que delimita o fim da instrução.
+
+**Nomeação de variáveis e funções**: Em js o padrão é utiliza **camelCase**. Não pode iniciar esses nomes com:
+
+* Número
+* Caracteres especiais com exceção de `_` e `$`
+
+**use strict**: Existem algumas palavras reservadas que só são liberadas no strict mode, e esse deixa o código um pouco mais seguro, desabilitando algumas coisas que eram bem ruins no javascript. Como se fosse um lint do código. Pode ser usado dentro de funções tb.
+
+```js
+// use strict não permite
+"use strict"
+x = 10;
+function multiplicar(n1, n1) {
+    return n1 * n1;
+}
+function teste() {
+    console.log(this);
+    this.a = "a"; // window escopo global
+}
+let msg = "";
+msg.count = 0;
+```
+
+**Tipagem Dinâmica**: É a capacidade do js de armazenar valores de diversos tipos em uma variável. Não preciso tipar uma variável. Com typescript isso não é mais possível
+
+```js
+let x = 10;
+x = "Ola mundo!"
+```
+
+**Aspas simples e duplas**: Podemos utilizar aspas duplas ou simples para criar uma string.
+
+```js
+let x = "Ola 'mundo!'";
+let y = 'Ola "mundo!"';
+```
+
+**Not a Number (NaN)**: Quando vc faz alguma operação que não retorna um número.
+
+```js
+console.log("ola" * 10);
+```
+
+**This dinâmico**: O this pode mudar o que ele armazena dentro dele dependendo do ambiente na qual executa.
+
+```js
+function teste01() {
+    console.log(this); // window no browser (é quem chamou essa função.)
+}
+const obj = {
+    n: 0,
+    teste01: teste01,
+    teste02: () => console.log(this)
+}
+obj.teste // {n: 0, teste: teste01}
+obj.teste02 // window no browser
+```
+
+**Conversão Implícita**: O javascript realiza essa conversão implicita quando descobre que sua string é um numero
+
+```js
+console.log("2" * 10);
 ```
 
 ## Memory Heap
