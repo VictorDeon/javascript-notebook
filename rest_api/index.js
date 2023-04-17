@@ -28,5 +28,5 @@ const server = http.createServer(app);
 server.listen(port, 'localhost', function(error) {
   if (error) throw error;
   const addr = server.address();
-  console.log('Rodando em http://%s:%d', addr.address, addr.port);
+  console.log('Rodando em http://localhost:%d', addr.port);
 });
